@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using GooglePlayGames;
 using UnityEngine.SocialPlatforms;
-using GooglePlayGames.BasicApi;
 
 public enum GameCamera
 {
@@ -24,39 +22,11 @@ public class GameManager : MonoBehaviour
 
     private GameState state;
 
-    private void Awake()
-    {
-#if UNITY_ANDROID
-        PlayGamesPlatform.DebugLogEnabled = true;
-        PlayGamesPlatform.Activate();
-#endif
-        Debug.Log(Application.persistentDataPath);
-    }
-
     private void Start()
     {
         instance = this;
         state = GetComponent<GameStateInit>();
         state.Construct();
-
-        SignInToGooglePlayServices();
-    }
-
-    public void SignInToGooglePlayServices()
-    {
-#if UNITY_ANDROID
-        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => {
-            switch (result)
-            {
-                case SignInStatus.Success:
-                    isConnectedToGooglePlayServices = true;
-                    break;
-                default:
-                    isConnectedToGooglePlayServices = false;
-                    break;
-            }
-        });
-#endif
     }
 
     private void Update()

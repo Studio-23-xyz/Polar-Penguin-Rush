@@ -40,20 +40,6 @@ public class GameStateDeath : GameState, IUnityAdsListener
             SaveManager.Instance.save.Highscore = (int)GameStats.Instance.score;
             currentScore.color = Color.green;
 
-            if (GameManager.Instance.isConnectedToGooglePlayServices)
-            {
-                Debug.Log("Reporting score..");
-                Social.ReportScore(SaveManager.Instance.save.Highscore, GPGSIds.leaderboard_top_score, (success) =>
-                {
-                    if (!success) Debug.LogError("Unable to post highscore");
-                });
-
-                Social.ReportProgress(GPGSIds.achievement_joining_the_ladder, 100.0f, null);
-            }
-            else
-            {
-                Debug.Log("Not signed in.. unable to report score");
-            }
         }
         else
         {

@@ -29,7 +29,6 @@ public class GameStats : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        OnCollectFish += SendAchivementProgress;
     }
 
     public void Update()
@@ -45,40 +44,6 @@ public class GameStats : MonoBehaviour
                 lastScoreUpdate = Time.time;
                 OnScoreChange?.Invoke(score);
             }
-
-            if (score > 10000 && !passed10k)
-            {
-                passed10k = true;
-                Social.ReportProgress(GPGSIds.achievement_5_digits, 100.0f, null);
-            }
-
-        }
-    }
-
-    private void SendAchivementProgress(int fishCount)
-    {
-        switch (fishCount)
-        {
-            case 10:
-                Social.ReportProgress(GPGSIds.achievement_collect_10_fish, 100.0f, null);
-                break;
-            case 25:
-                Social.ReportProgress(GPGSIds.achievement_collect_25_fish, 100.0f, null);
-                break;
-            case 50:
-                Social.ReportProgress(GPGSIds.achievement_collect_50_fish, 100.0f, null);
-                break;
-            case 75:
-                Social.ReportProgress(GPGSIds.achievement_collect_75_fish, 100.0f, null);
-                break;
-            case 100:
-                Social.ReportProgress(GPGSIds.achievement_collect_100_fish, 100.0f, null);
-                break;
-            case 300:
-                Social.ReportProgress(GPGSIds.achievement_collect_300_fish, 100.0f, null);
-                break;
-            default:
-                break;
         }
     }
 

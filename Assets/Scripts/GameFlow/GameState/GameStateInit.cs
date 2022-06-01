@@ -17,9 +17,6 @@ public class GameStateInit : GameState
 
         menuUI.SetActive(true);
 
-        if (SaveManager.Instance.save.Fish >= 300)
-            Social.ReportProgress(GPGSIds.achievement_money_in_the_bank, 100.0f, null);
-
         AudioManager.Instance.PlayMusicWithXFade(menuLoopMusic, 0.5f);
     }
 
@@ -42,25 +39,11 @@ public class GameStateInit : GameState
 
     public void OnAchievementClick()
     {
-        if (GameManager.Instance.isConnectedToGooglePlayServices)
-        {
-            Social.ShowAchievementsUI();
-        }
-        else
-        {
-            GameManager.Instance.SignInToGooglePlayServices();
-        }
+        
     }
 
     public void OnLeaderboardClick()
     {
-        if (GameManager.Instance.isConnectedToGooglePlayServices)
-        {
-            Social.ShowLeaderboardUI();
-        }
-        else
-        {
-            GameManager.Instance.SignInToGooglePlayServices();
-        }
+        
     }
 }

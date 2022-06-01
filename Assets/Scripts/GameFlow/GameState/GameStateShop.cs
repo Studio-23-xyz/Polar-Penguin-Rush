@@ -88,8 +88,6 @@ public class GameStateShop : GameState
             hatContainer.GetChild(i).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
             unlockedHatCount++;
             ResetCompletionCircle();
-
-            Social.ReportProgress(GPGSIds.achievement_classy, 100.0f, null);
         }
         // Don't have it, can't buy it
         else
@@ -105,9 +103,6 @@ public class GameStateShop : GameState
 
         completionCircle.fillAmount = (float)currentlyUnlockedCount / (float)hatCount;
         completionText.text = currentlyUnlockedCount + " / " + hatCount;
-
-        if(hatCount == currentlyUnlockedCount)
-            Social.ReportProgress(GPGSIds.achievement_buy_all_the_hats, 100.0f, null);
     }
 
     public void OnHomeClick()
