@@ -2894,6 +2894,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564122286}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &570060554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570060556}
+  - component: {fileID: 570060555}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &570060555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570060554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: af10953ba2bc8854fb04893e99d02d1e, type: 2}
+--- !u!4 &570060556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570060554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &576504321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 095f379f461e4554c8999ccdc9f2e131,
@@ -6594,7 +6642,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6719,7 +6767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde3181a26efa39479a8c5fd19fe40d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1860200493}
+  player: {fileID: 795409606}
   material: {fileID: 2100000, guid: fa5d3a00ed33c164186c4d758f8134fc, type: 2}
   offsetSpeed: 0.25
 --- !u!1 &1328151265
@@ -8971,7 +9019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df62c08b3100294683b20ea5cbb027b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motor: {fileID: 1860200494}
+  motor: {fileID: 795409600}
   worldGeneration: {fileID: 763837463}
   sceneChunkGeneration: {fileID: 763837465}
   cameras:
