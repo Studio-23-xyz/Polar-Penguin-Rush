@@ -17,8 +17,8 @@ public class SlidingState : BaseState
         initialSize = motor.controller.height;
         initialCenter = motor.controller.center;
 
-        motor.controller.height = initialSize * 0.5f;
-        motor.controller.center = initialCenter * 0.5f;
+        motor.controller.height = initialSize * 0.2f;
+        motor.controller.center = initialCenter * 0.2f;
     }
 
     public override void Destruct()
