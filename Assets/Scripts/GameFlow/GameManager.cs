@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public WorldGeneration worldGeneration;
     public SceneChunkGeneration sceneChunkGeneration;
     public GameObject[] cameras;
-    public bool isConnectedToGooglePlayServices;
+    public PlayfabManager PlayfabManagerScript;
 
     private GameState state;
 

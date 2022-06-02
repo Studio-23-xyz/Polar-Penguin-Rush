@@ -44,6 +44,6 @@ public class GameStateInit : GameState
 
     public void OnLeaderboardClick()
     {
-        
+        brain.ChangeState(GetComponent<GameStateLeaderboard>());
     }
 }

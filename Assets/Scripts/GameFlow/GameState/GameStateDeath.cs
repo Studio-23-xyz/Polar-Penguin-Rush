@@ -53,6 +53,8 @@ public class GameStateDeath : GameState, IUnityAdsListener
         currentScore.text = GameStats.Instance.ScoreToText();
         fishTotal.text = "Total fish :" + SaveManager.Instance.save.Fish;
         currentFish.text = GameStats.Instance.FishToText();
+
+        GameManager.Instance.PlayfabManagerScript.SendToLeaderboard(Mathf.RoundToInt(GameStats.Instance.score));
     }
 
     public override void Destruct()
